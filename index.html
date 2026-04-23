@@ -314,7 +314,7 @@ function envoyer(){
   if(!form.querySelector('[name="sexe"]:checked')){alert('Veuillez sélectionner le sexe.');return;}
   if(!ok){alert('Veuillez remplir les champs obligatoires.');return;}
 
-  var sigB64=sigC.toDataURL('image/jpeg',0.5);
+
 
   var lignes=[
     '======================================================',
@@ -352,9 +352,6 @@ function envoyer(){
     'Nom du père      : '+(fv('nom_pere')||'-'),
     'Nom de la mère   : '+(fv('nom_mere')||'-'),
     'Nom du tuteur    : '+(fv('nom_tuteur')||'-'),
-    '',
-    '--- SIGNATURE DU DEMANDEUR BASE64 ---',
-    sigB64,
     '',
     '======================================================'
   ];
