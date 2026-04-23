@@ -314,12 +314,7 @@ function envoyer(){
   if(!form.querySelector('[name="sexe"]:checked')){alert('Veuillez sélectionner le sexe.');return;}
   if(!ok){alert('Veuillez remplir les champs obligatoires.');return;}
 
-  var sigB64=sigC.toDataURL('image/png');
-  var sigMereB64=sigMere.toDataURL('image/png');
-  var sigPereB64=sigPere.toDataURL('image/png');
-  var sigTuteurB64=sigTuteur.toDataURL('image/png');
-  var photoEl=document.getElementById('photoPreview');
-  var photoB64=photoEl.style.display!=='none'?photoEl.src:'(Aucune photo fournie)';
+  var sigB64=sigC.toDataURL('image/jpeg',0.5);
 
   var lignes=[
     '======================================================',
@@ -358,20 +353,8 @@ function envoyer(){
     'Nom de la mère   : '+(fv('nom_mere')||'-'),
     'Nom du tuteur    : '+(fv('nom_tuteur')||'-'),
     '',
-    '--- PHOTO D\'IDENTITÉ BASE64 ---',
-    photoB64,
-    '',
     '--- SIGNATURE DU DEMANDEUR BASE64 ---',
     sigB64,
-    '',
-    '--- SIGNATURE DE LA MÈRE BASE64 ---',
-    sigMereB64,
-    '',
-    '--- SIGNATURE DU PÈRE BASE64 ---',
-    sigPereB64,
-    '',
-    '--- SIGNATURE DU TUTEUR BASE64 ---',
-    sigTuteurB64,
     '',
     '======================================================'
   ];
